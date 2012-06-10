@@ -5,6 +5,7 @@ namespace CSS.Infrastructure.Querying
 {
     public class Criterion
     {
+		//gittest
         private string _propertyName;
         private object _value;
         private CriteriaOperator _criteriaOperator;
