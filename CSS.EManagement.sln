@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS.Infrastructure", "CSS.Infrastructure\CSS.Infrastructure.csproj", "{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model and Repository", "Model and Repository", "{5FE529D1-27A9-43A3-99AC-7B9BC4795633}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS.OpusForce.Model", "CSS.OpusForce.Model\CSS.OpusForce.Model.csproj", "{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS.OpusForce.Repository.NHibernate", "CSS.OpusForce.Repository.NHibernate\CSS.OpusForce.Repository.NHibernate.csproj", "{546C0B58-6DF4-44D9-9BB7-C2272AD5E48C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS.OpusForce.UI.Web.MVC", "CSS.OpusForce.UI.Web.MVC\CSS.OpusForce.UI.Web.MVC.csproj", "{A02AEEDE-B2DC-4670-9780-AF9B7761EE40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS.OpusForce.Services", "CSS.OpusForce.Services\CSS.OpusForce.Services.csproj", "{9DBCC92B-0751-43CE-86EA-826C1B4EE571}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{DBAD1250-32DE-481E-A5FF-E9613F7F7366}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B59FC159-EA05-4435-9623-ED7B7BE4B043}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{FE5DB9C8-DFC7-4EBA-8294-DB7425075768}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{546C0B58-6DF4-44D9-9BB7-C2272AD5E48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546C0B58-6DF4-44D9-9BB7-C2272AD5E48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546C0B58-6DF4-44D9-9BB7-C2272AD5E48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546C0B58-6DF4-44D9-9BB7-C2272AD5E48C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A02AEEDE-B2DC-4670-9780-AF9B7761EE40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A02AEEDE-B2DC-4670-9780-AF9B7761EE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A02AEEDE-B2DC-4670-9780-AF9B7761EE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A02AEEDE-B2DC-4670-9780-AF9B7761EE40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DBCC92B-0751-43CE-86EA-826C1B4EE571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DBCC92B-0751-43CE-86EA-826C1B4EE571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DBCC92B-0751-43CE-86EA-826C1B4EE571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DBCC92B-0751-43CE-86EA-826C1B4EE571}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08} = {5FE529D1-27A9-43A3-99AC-7B9BC4795633}
+		{546C0B58-6DF4-44D9-9BB7-C2272AD5E48C} = {5FE529D1-27A9-43A3-99AC-7B9BC4795633}
+		{9DBCC92B-0751-43CE-86EA-826C1B4EE571} = {DBAD1250-32DE-481E-A5FF-E9613F7F7366}
+		{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E} = {B59FC159-EA05-4435-9623-ED7B7BE4B043}
+		{A02AEEDE-B2DC-4670-9780-AF9B7761EE40} = {FE5DB9C8-DFC7-4EBA-8294-DB7425075768}
+	EndGlobalSection
+EndGlobal
