@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Contractors" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Contractor" table="Contractor" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="ResponsibleHead">
+      <column name="ResponsibleHead" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Address">
+      <column name="Address" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="PhoneNumber1">
+      <column name="PhoneNumber1" sql-type="nvarchar(32)" not-null="false" />
+    </property>
+    <property name="PhoneNumber2">
+      <column name="PhoneNumber2" sql-type="nvarchar(32)" not-null="false" />
+    </property>
+    <property name="MailAddress">
+      <column name="MailAddress" sql-type="nvarchar(32)" not-null="false" />
+    </property>
+    <property name="BankAccountNumber">
+      <column name="BankAccountNumber" sql-type="nvarchar(32)" not-null="false" />
+    </property>
+    <property name="InvoiceName">
+      <column name="InvoiceName" sql-type="nvarchar(128" not-null="false" />
+    </property>
+    <property name="InvoiceAddress">
+      <column name="InvoiceAddress" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="TaxOffice">
+      <column name="TaxOffice" sql-type="nvarchar(128)" not-null="false" />
+    </property>
+    <property name="TaxNumber">
+      <column name="TaxNumber" sql-type="nvarchar(16)" not-null="false" />
+    </property>
+
+    <many-to-one name="ContractorStatus"
+                      class="ContractorStatus"
+                      column="ContractorStatusId"
+                      not-null="false" />  
+    
+    <bag name="Agreements" inverse="true" cascade="none" lazy="true">
+      <key column="ContractorId" />
+      <one-to-many class="CSS.OpusForce.Model.Agreements.Agreement" />
+    </bag>
+    <bag name="Employees" inverse="true" cascade="none" lazy="true">
+      <key column="ContractorId" />
+      <one-to-many class="CSS.OpusForce.Model.Employees.Employee" />
+    </bag>
+    <bag name="ScoreCardCounts" inverse="true" cascade="none" lazy="true">
+      <key column="ContractorId" />
+      <one-to-many class="CSS.OpusForce.Model.ScoreCards.ScoreCardCount" />
+    </bag>
+  </class>
+</hibernate-mapping>

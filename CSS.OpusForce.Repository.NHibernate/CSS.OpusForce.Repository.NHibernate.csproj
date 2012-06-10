@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{546C0B58-6DF4-44D9-9BB7-C2272AD5E48C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSS.OpusForce.Repository.NHibernate</RootNamespace>
+    <AssemblyName>CSS.OpusForce.Repository.NHibernate</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\..\Lib\NHibernate - 3.2.0.GA\Required_Bins\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\Lib\NHibernate - 3.2.0.GA\Required_Bins\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factories\SessionFactory.cs" />
+    <Compile Include="Factories\SessionStorageFactory.cs" />
+    <Compile Include="Repositories\AgreementRepositories\AgreementRepository.cs" />
+    <Compile Include="Repositories\AgreementRepositories\AgreementStatusRepository.cs" />
+    <Compile Include="Repositories\AgreementRepositories\AgreementTypeRepository.cs" />
+    <Compile Include="Repositories\CalendarRepositories\CalendarDayRepository.cs" />
+    <Compile Include="Repositories\CalendarRepositories\CalendarDayRuleRepository.cs" />
+    <Compile Include="Repositories\CalendarRepositories\CalendarDayTypeRepository.cs" />
+    <Compile Include="Repositories\CalendarRepositories\CalendarMonthRepository.cs" />
+    <Compile Include="Repositories\CalendarRepositories\CalendarRepository.cs" />
+    <Compile Include="Repositories\CompanyRepositories\CompanyRepository.cs" />
+    <Compile Include="Repositories\CompanyRepositories\CompanyTypeRepository.cs" />
+    <Compile Include="Repositories\ContractorRepositories\ContractorRepository.cs" />
+    <Compile Include="Repositories\ContractorRepositories\ContractorStatusRepository.cs" />
+    <Compile Include="Repositories\CalendarRepositories\DayRuleRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\AssignedDutyRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\CareerHistoryRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\DebitStatusRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\DebitTypeRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\EmployeeDebitRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\EmployeeFileRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\EmployeeFinanceRecordRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\EmployeeRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\FileStatusRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\FileTypeRepository.cs" />
+    <Compile Include="Repositories\FinancialRepositories\CurrencyRepository.cs" />
+    <Compile Include="Repositories\FinancialRepositories\FinancialActivityTypeRepository.cs" />
+    <Compile Include="Repositories\OperationCenterRepositories\OperationCenterRepository.cs" />
+    <Compile Include="Repositories\OperationCenterRepositories\OperationCenterStatusRepository.cs" />
+    <Compile Include="Repositories\OperationCenterRepositories\OperationCenterTypeRepository.cs" />
+    <Compile Include="Repositories\FinancialRepositories\PaymentPeriodRepository.cs" />
+    <Compile Include="Repositories\FinancialRepositories\PaymentTypeRepository.cs" />
+    <Compile Include="Repositories\ProjectRepositories\ProjectRepository.cs" />
+    <Compile Include="Repositories\ProjectRepositories\ProjectStatusRepository.cs" />
+    <Compile Include="Repositories\ProjectRepositories\ProjectTypeRepository.cs" />
+    <Compile Include="Repositories\AccountRepositories\RoleRepository.cs" />
+    <Compile Include="Repositories\ScoreCardRepositories\ScoreCardCountRepository.cs" />
+    <Compile Include="Repositories\ScoreCardRepositories\ScoreCardRepository.cs" />
+    <Compile Include="Repositories\ScoreCardRepositories\ScoreCardVarianceRepository.cs" />
+    <Compile Include="Repositories\ScoreCardRepositories\VarianceTypeRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepositories\SkillRepository.cs" />
+    <Compile Include="Repositories\AccountRepositories\UserAccountRepository.cs" />
+    <Compile Include="Repositories\AccountRepositories\UserRoleRepository.cs" />
+    <Compile Include="UnitOfWork\NHUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\QueryTranslator.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="SessionStorage\HttpSessionContainer.cs" />
+    <Compile Include="SessionStorage\ISessionStorageContainer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\nhibernate-mapping.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSS.Infrastructure\CSS.Infrastructure.csproj">
+      <Project>{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E}</Project>
+      <Name>CSS.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSS.OpusForce.Model\CSS.OpusForce.Model.csproj">
+      <Project>{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08}</Project>
+      <Name>CSS.OpusForce.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Agreement.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AgreementStatus.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AgreementType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AssignedDuty.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Calendar.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CalendarDay.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CalendarDayRule.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CalendarDayType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CalendarMonth.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CareerHistory.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Company.hbm.xml" />
+    <EmbeddedResource Include="Mapping\CompanyType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Contractor.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ContractorStatus.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Currency.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DayRule.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DebitStatus.hbm.xml" />
+    <EmbeddedResource Include="Mapping\DebitType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Employee.hbm.xml" />
+    <EmbeddedResource Include="Mapping\EmployeeDebit.hbm.xml" />
+    <EmbeddedResource Include="Mapping\EmployeeFile.hbm.xml" />
+    <EmbeddedResource Include="Mapping\EmployeeFinanceRecord.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FileStatus.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FileType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\FinancialActivityType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\OperationCenter.hbm.xml" />
+    <EmbeddedResource Include="Mapping\OperationCenterStatus.hbm.xml" />
+    <EmbeddedResource Include="Mapping\OperationCenterType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\PaymentPeriod.hbm.xml" />
+    <EmbeddedResource Include="Mapping\PaymentType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Project.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ProjectStatus.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ProjectType.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Role.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ScoreCard.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ScoreCardCount.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ScoreCardVariance.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Skill.hbm.xml" />
+    <EmbeddedResource Include="Mapping\UserAccount.hbm.xml" />
+    <EmbeddedResource Include="Mapping\UserRole.hbm.xml" />
+    <EmbeddedResource Include="Mapping\VarianceType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

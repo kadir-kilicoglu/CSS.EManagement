@@ -1,0 +1,72 @@
+﻿@using CSS.OpusForce.Services.ViewModels;
+@model IEnumerable<ProjectStatusSummaryView>
+
+@{
+    ViewBag.Title = "Proje Durumları Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";   
+}
+
+<div id="header-band" class="bg-blue">    
+   @Html.ActionLink("Projeler", "ProjectList", "Project", null, new { Class = "btnBack" })
+   @Html.ActionLink("Anasayfa", "Index", "Home", null, new { Class = "btnHome" })   
+   <div class="ym-wrapper">
+       <div class="ym-grid top-35">
+           <div class="ym-gl">
+               <img alt="OpusForce Logo" src="@Url.Content("~/Content/images/logo.png")" />
+           </div>
+           <div class="ym-gr">
+               @Html.ActionLink("Home", "Index", "Home", null, new { Class = "btnLogin" })
+           </div>
+       </div> 
+   </div>           
+</div>
+<div class="clearfix"></div>
+<div id="main">
+    <div class="ym-wrapper">        
+        <div class="ym-hlist">
+          <ul>
+            <li>@Html.ActionLink("Projeler", "ProjectList", "Project", null, null)</li>
+            <li>@Html.ActionLink("Proje Türleri", "ProjectTypeList", "Project", null, null)</li>
+            <li class="active">@Html.ActionLink("Proje Durumları", "ProjectStatusList", "Project", null, null)</li>
+          </ul>
+        </div>
+        <hr />
+
+        @if (!String.IsNullOrEmpty((string)TempData["Error"]))
+        {
+            <p class="box error">@TempData["Error"]</p>
+            <hr />
+        }
+        @if ((bool)TempData["Delete"])
+        {
+            <p class="box warning">Tebrikler! Kayıt Başarıyla Silindi.</p>
+            <hr />
+        }
+        
+        @(Html.Telerik().Grid(Model)
+        .Name("ProjectStatuses")
+        .DataKeys(dataKeys => dataKeys.Add(c => c.Id))
+        .DataBinding(dataBinding => dataBinding.Server()
+            .Delete("ProjectStatusDelete", "Project", null))
+        .Columns(columns =>
+        {
+            columns.Bound(o => o.Id).Title("No.").Width(100);
+            columns.Bound(o => o.Name).Title("Proje Durumu");
+            columns.Command(commands => 
+                {                    
+                    commands.Custom("viewDetails")
+                    .Text("Detay")
+                    .Ajax(false)
+                    .Action("ProjectStatusRead", "Project", null);
+                    commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                })
+            .Width(200);
+        })
+        .Sortable()
+        .Pageable(paging => paging.PageSize(10))
+        .Localizable("tr-TR")
+        )
+            
+        @Html.ActionLink("Proje Durumu Oluştur", "ProjectStatusCreate", null, new { Class = "ym-button ym-add" })        
+    </div>
+</div>

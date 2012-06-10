@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="tr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>@ViewBag.Title</title>  
+        
+         <!-- mobile viewport optimisation -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="@Url.Content("~/Content/central.css")" type="text/css"/>
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" href="~/Content/yaml/core/iehacks.min.css" type="text/css"/>
+        <![endif]-->
+        @using Telerik.Web.Mvc.UI;
+        @(Html.Telerik().StyleSheetRegistrar()
+                      .DefaultGroup(group => group
+                                  .Add("~/Content/telerik.common.css")
+                                  .Add("~/Content/telerik.metro.css")
+                          .Compress(true))
+                     )
+
+        <!-- scripts -->
+        <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->        
+    </head>
+    <body style="background-color:#eeeeee;">        
+        @RenderBody()
+        
+        @Html.Telerik().ScriptRegistrar().Globalization(true);
+    </body>
+</html>

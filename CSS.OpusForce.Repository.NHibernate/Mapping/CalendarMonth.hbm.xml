@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Calendars" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CalendarMonth" table="CalendarMonth" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="StartDate">
+      <column name="StartDate" sql-type="date" not-null="true" />
+    </property>
+    <property name="EndDate">
+      <column name="EndDate" sql-type="date" not-null="true" />
+    </property>
+
+    <many-to-one name="Calendar"
+                      class="Calendar"
+                      column="CalendarId"
+                      not-null="true" />
+    
+    <bag name="CalendarDays" inverse="true" cascade="none" lazy="true">
+      <key column="CalendarMonthId" />
+      <one-to-many class="CalendarDay" />
+    </bag>
+  </class>
+</hibernate-mapping>

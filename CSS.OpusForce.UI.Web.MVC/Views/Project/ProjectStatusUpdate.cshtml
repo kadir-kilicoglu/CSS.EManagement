@@ -1,0 +1,73 @@
+﻿@using CSS.OpusForce.Services.ViewModels;
+@model ProjectStatusView
+
+@{
+    ViewBag.Title = "Proje Durumu Düzenleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";   
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('form.uniForm').uniform({
+            prevent_submit: true
+        });
+    });
+</script>
+
+<div id="header-band" class="bg-blue">    
+   @Html.ActionLink("Projeler", "ProjectList", "Project", null, new { Class = "btnBack" })
+   @Html.ActionLink("Anasayfa", "Index", "Home", null, new { Class = "btnHome" })   
+   <div class="ym-wrapper">
+       <div class="ym-grid top-35">
+           <div class="ym-gl">
+               <img alt="OpusForce Logo" src="@Url.Content("~/Content/images/logo.png")" />
+           </div>
+           <div class="ym-gr">
+               @Html.ActionLink("Home", "Index", "Home", null, new { Class = "btnLogin" })
+           </div>
+       </div> 
+   </div>           
+</div>
+<div class="clearfix"></div>
+<div id="main">
+    <div class="ym-wrapper">        
+        <div class="ym-hlist">
+          <ul>
+            <li>@Html.ActionLink("Projeler", "ProjectList", "Project", null, null)</li>
+            <li>@Html.ActionLink("Proje Türleri", "ProjectTypeList", "Project", null, null)</li>
+            <li class="active">@Html.ActionLink("Proje Durumları", "ProjectStatusList", "Project", null, null)</li>
+          </ul>
+        </div>
+        <hr />
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { Class="ym-form ym-columnar" }))
+        {   
+            @Html.ValidationSummary() 
+            
+            if (!String.IsNullOrEmpty((string)TempData["Error"]))
+            {
+                <p class="box error">@TempData["Error"]</p>
+                <hr />
+            }
+            
+            <div class="ym-fbox-text">
+                <label for="Id">Proje Durumu No.</label>
+                @Html.TextBoxFor(c => c.Id, new { @readonly = "readonly" })
+            </div>
+            
+            <div class="ym-fbox-text">
+                <label for="Name">Proje Durumu Adı</label>
+                @Html.TextBoxFor(c => c.Name)
+            </div>
+            
+            <div class="ym-fbox-text">
+                <label for="Description">Proje Durumu Açıklaması</label>
+                @Html.TextAreaFor(c => c.Description, new { rows = "5" })
+            </div>
+    
+            <div class="ym-fbox-button">
+                @Html.ActionLink("Vazgeç ve geri dön", "ProjectStatusRead", "Project", new { Model.Id }, new { Class = "ym-button ym-left-arrow" }) 
+                <button class="ym-button ym-save">Güncelle</button>
+            </div>   
+        }        
+    </div>
+</div>

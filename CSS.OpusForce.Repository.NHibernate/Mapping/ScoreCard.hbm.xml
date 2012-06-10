@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.ScoreCards" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ScoreCard" table="ScoreCard" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+
+    <property name="IsTransferred">
+      <column name="IsTransferred" sql-type="bit" not-null="true" />
+    </property>
+    <property name="EarnedAmount">
+      <column name="EarnedAmount" sql-type="decimal(10,2)" not-null="false" />
+    </property>
+
+    <many-to-one name="Employee"
+                     class="CSS.OpusForce.Model.Employees.Employee"
+                     column="EmployeeId"
+                     not-null="true" />
+    <many-to-one name="CalendarDay"
+                     class="CSS.OpusForce.Model.Calendars.CalendarDay"
+                     column="CalendarDayId"
+                     not-null="true" />   
+    
+    <bag name="ScoreCardVariances" inverse="true" cascade="none" lazy="true">
+      <key column="ScoreCardId" />
+      <one-to-many class="ScoreCardVariance" />
+    </bag>
+  </class>
+</hibernate-mapping>

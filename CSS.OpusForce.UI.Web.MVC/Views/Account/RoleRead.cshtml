@@ -1,0 +1,67 @@
+﻿@using CSS.OpusForce.Services.ViewModels;
+@model RoleView
+
+@{
+    ViewBag.Title = "Rol Detayı";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header-band" class="bg-blue">    
+   @Html.ActionLink("Kullanıcılar", "UserAccountList", "Account", null, new { Class = "btnBack" })
+    @Html.ActionLink("Anasayfa", "Index", "Home", null, new { Class = "btnHome" })   
+    <div class="ym-wrapper">
+        <div class="ym-grid top-35">
+            <div class="ym-gl">
+                <img alt="OpusForce Logo" src="@Url.Content("~/Content/images/logo.png")" />
+            </div>
+            <div class="ym-gr">
+                @Html.ActionLink("Home", "Index", "Home", null, new { Class = "btnLogin" })
+            </div>
+        </div> 
+    </div>           
+</div>
+<div class="clearfix"></div>
+<div id="main">
+    <div class="ym-wrapper">        
+        <div class="ym-hlist">
+          <ul>
+            <li>@Html.ActionLink("Kullanıcılar", "UserAccountList", "Account", null)</li>
+            <li class="active">@Html.ActionLink("Roller", "RoleList", "Account", null)</li>
+          </ul>
+        </div>
+        <hr />
+        @if ((bool)ViewData["Add"])
+        {
+            <p class="box success">Tebrikler! Kayıt Başarıyla Oluşturuldu.</p>
+            <hr />
+        }
+        @if ((bool)ViewData["Update"])
+        {
+            <p class="box success">Tebrikler! Kayıt Başarıyla Güncelleştirildi.</p>
+            <hr />
+        }
+        
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Rol No.</b></div><div class="ym-g62 ym-gr">: @Model.Id</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Rol Adı</b></div><div class="ym-g62 ym-gr">: @Model.Name</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Rol Açıklaması</b></div><div class="ym-g62 ym-gr">: @Model.Description</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid">
+             @Html.ActionLink("Geri dön", "RoleList", "Account", null, new { Class = "ym-button ym-next" })
+             @Html.ActionLink("Düzenle", "RoleUpdate", "Account", new { id = Model.Id }, new { Class = "ym-button ym-edit" })
+        </div>        
+    </div>
+</div>

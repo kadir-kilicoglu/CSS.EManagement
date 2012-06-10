@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DBCC92B-0751-43CE-86EA-826C1B4EE571}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSS.OpusForce.Services</RootNamespace>
+    <AssemblyName>CSS.OpusForce.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\Lib\AutoMapper - 2.0.0\net40-client\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementations\AccountServices.cs" />
+    <Compile Include="Implementations\AgreementServices.cs" />
+    <Compile Include="Implementations\CalendarServices.cs" />
+    <Compile Include="Implementations\CompanyServices.cs" />
+    <Compile Include="Implementations\ContractorServices.cs" />
+    <Compile Include="Implementations\EmployeeServices.cs" />
+    <Compile Include="Implementations\FinancialServices.cs" />
+    <Compile Include="Implementations\OperationCenterServices.cs" />
+    <Compile Include="Implementations\ProjectServices.cs" />
+    <Compile Include="Implementations\ScoreCardServices.cs" />
+    <Compile Include="Interfaces\IAccountServices.cs" />
+    <Compile Include="Interfaces\ICalendarServices.cs" />
+    <Compile Include="Interfaces\IContractorServices.cs" />
+    <Compile Include="Interfaces\IAgreementServices.cs" />
+    <Compile Include="Interfaces\ICompanyServices.cs" />
+    <Compile Include="Interfaces\IEmployeeServices.cs" />
+    <Compile Include="Interfaces\IFinancialServices.cs" />
+    <Compile Include="Interfaces\IOperationCenterServices.cs" />
+    <Compile Include="Interfaces\IProjectServices.cs" />
+    <Compile Include="Interfaces\IScoreCardServices.cs" />
+    <Compile Include="Mapping\AccountMapper.cs" />
+    <Compile Include="Mapping\AgreementMapper.cs" />
+    <Compile Include="Mapping\CalendarMapper.cs" />
+    <Compile Include="Mapping\CompanyMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mapping\ContractorMapper.cs" />
+    <Compile Include="Mapping\EmployeeMapper.cs" />
+    <Compile Include="Mapping\FinancialMapper.cs" />
+    <Compile Include="Mapping\OperationCenterMapper.cs" />
+    <Compile Include="Mapping\ProjectMapper.cs" />
+    <Compile Include="Mapping\ScoreCardMapper.cs" />
+    <Compile Include="Messaging\AccountMessages\DeleteUserAccountRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\DeleteUserAccountResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\ListUserAccountsResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\ListUserAccountsRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\UpdateUserAccountResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\CreateRoleRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\CreateRoleResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\CreateUserAccountRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\CreateUserAccountResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\DeleteRoleRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\DeleteRoleResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\ListRolesRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\ListRolesResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\ReadRoleRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\ReadRoleResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\ReadUserAccountRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\ReadUserAccountResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\UpdateRoleRequest.cs" />
+    <Compile Include="Messaging\AccountMessages\UpdateRoleResponse.cs" />
+    <Compile Include="Messaging\AccountMessages\UpdateUserAccountRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\CreateAgreementStatusRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\CreateAgreementStatusResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\CreateAgreementTypeRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\CreateAgreementTypeResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\DeleteAgreementStatusRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\DeleteAgreementStatusResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\DeleteAgreementTypeRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\DeleteAgreementTypeResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\ListAgreementStatusesRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\ListAgreementStatusesResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\ListAgreementTypesRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\ListAgreementTypesResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\ReadAgreementStatusRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\ReadAgreementStatusResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\ReadAgreementTypeRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\ReadAgreementTypeResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\UpdateAgreementStatusRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\UpdateAgreementStatusResponse.cs" />
+    <Compile Include="Messaging\AgreementMessages\UpdateAgreementTypeRequest.cs" />
+    <Compile Include="Messaging\AgreementMessages\UpdateAgreementTypeResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\CreateCalendarDayTypeRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\CreateCalendarDayTypeResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\CreateCalendarRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\CreateCalendarResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\DeleteCalendarDayTypeRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\DeleteCalendarDayTypeResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\DeleteCalendarRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\DeleteCalendarResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\ListCalendarDayTypesRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\ListCalendarDayTypesResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\ListCalendarsRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\ListCalendarsResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\ReadCalendarDayTypeRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\ReadCalendarDayTypeResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\ReadCalendarRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\ReadCalendarResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\UpdateCalendarDayTypeRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\UpdateCalendarDayTypeResponse.cs" />
+    <Compile Include="Messaging\CalendarMessages\UpdateCalendarRequest.cs" />
+    <Compile Include="Messaging\CalendarMessages\UpdateCalendarResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\CreateCompanyRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\CreateCompanyResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\CreateCompanyTypeRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\CreateCompanyTypeResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\DeleteCompanyRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\DeleteCompanyResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\DeleteCompanyTypeRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\DeleteCompanyTypeResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\ListCompaniesResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\ListCompaniesRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\ReadCompanyRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\ReadCompanyResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\ReadCompanyTypeRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\ReadCompanyTypeResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\ListCompanyTypesRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\ListCompanyTypesResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\UpdateCompanyResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\UpdateCompanyRequest.cs" />
+    <Compile Include="Messaging\CompanyMessages\UpdateCompanyTypeResponse.cs" />
+    <Compile Include="Messaging\CompanyMessages\UpdateCompanyTypeRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\CreateContractorRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\CreateContractorResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\CreateContractorStatusRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\CreateContractorStatusResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\DeleteContractorRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\DeleteContractorResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\DeleteContractorStatusRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\DeleteContractorStatusResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\ListContractorsRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\ListContractorsResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\ListContractorStatusesRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\ListContractorStatusesResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\ReadContractorRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\ReadContractorResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\ReadContractorStatusRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\ReadContractorStatusResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\UpdateContractorRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\UpdateContractorResponse.cs" />
+    <Compile Include="Messaging\ContractorMessages\UpdateContractorStatusRequest.cs" />
+    <Compile Include="Messaging\ContractorMessages\UpdateContractorStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\CreateDebitStatusRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\CreateDebitStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\CreateDebitTypeRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\CreateDebitTypeResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\CreateFileStatusRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\CreateFileStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\CreateFileTypeRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\CreateFileTypeResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\DeleteDebitStatusRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\DeleteDebitStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\DeleteDebitTypeRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\DeleteDebitTypeResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\DeleteFileStatusRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\DeleteFileTypeRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\DeleteFileTypeResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\DeleteFileStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ListDebitStatusesRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ListDebitStatusesResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ListDebitTypesRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ListDebitTypesResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ListFileStatusesRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ListFileStatusesResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ListFileTypesResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ListFileTypesRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ReadDebitStatusRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ReadDebitStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ReadDebitTypeRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ReadDebitTypeResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ReadFileStatusRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ReadFileStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ReadFileTypeRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\ReadFileTypeResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\UpdateDebitStatusRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\UpdateDebitStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\UpdateDebitTypeRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\UpdateDebitTypeResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\UpdateFileStatusRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\UpdateFileStatusResponse.cs" />
+    <Compile Include="Messaging\EmployeeMessages\UpdateFileTypeRequest.cs" />
+    <Compile Include="Messaging\EmployeeMessages\UpdateFileTypeResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\CreateFinancialActivityTypeRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\CreateFinancialActivityTypeResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\CreatePaymentTypeRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\CreatePaymentTypeResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\DeleteFinancialActivityTypeRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\DeleteFinancialActivityTypeResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\DeletePaymentTypeRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\DeletePaymentTypeResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\ListFinancialActivityTypesRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\ListFinancialActivityTypesResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\ListPaymentTypesRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\ListPaymentTypesResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\ReadFinancialActivityTypeRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\ReadFinancialActivityTypeResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\ReadPaymentTypeRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\ReadPaymentTypeResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\UpdateFinancialActivityTypeRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\UpdateFinancialActivityTypeResponse.cs" />
+    <Compile Include="Messaging\FinancialMessages\UpdatePaymentTypeRequest.cs" />
+    <Compile Include="Messaging\FinancialMessages\UpdatePaymentTypeResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\CreateOperationCenterStatusRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\CreateOperationCenterStatusResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\CreateOperationCenterTypeRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\CreateOperationCenterTypeResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\DeleteOperationCenterStatusRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\DeleteOperationCenterStatusResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\DeleteOperationCenterTypeRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\DeleteOperationCenterTypeResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\ListOperationCenterStatusesRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\ListOperationCenterStatusesResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\ListOperationCenterTypesRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\ListOperationCenterTypesResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\ReadOperationCenterStatusRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\ReadOperationCenterStatusResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\ReadOperationCenterTypeRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\ReadOperationCenterTypeResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\UpdateOperationCenterStatusRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\UpdateOperationCenterStatusResponse.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\UpdateOperationCenterTypeRequest.cs" />
+    <Compile Include="Messaging\OperationCenterMessages\UpdateOperationCenterTypeResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\CreateProjectRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\CreateProjectResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\CreateProjectStatusRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\CreateProjectStatusResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\CreateProjectTypeRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\CreateProjectTypeResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\DeleteProjectRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\DeleteProjectResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\DeleteProjectStatusRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\DeleteProjectStatusResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\DeleteProjectTypeRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\DeleteProjectTypeResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\ListProjectsRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\ListProjectsResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\ListProjectStatusesRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\ListProjectStatusesResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\ListProjectTypesRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\ListProjectTypesResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\ReadProjectRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\ReadProjectResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\ReadProjectStatusRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\ReadProjectStatusResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\ReadProjectTypeRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\ReadProjectTypeResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\UpdateProjectRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\UpdateProjectResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\UpdateProjectStatusRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\UpdateProjectStatusResponse.cs" />
+    <Compile Include="Messaging\ProjectMessages\UpdateProjectTypeRequest.cs" />
+    <Compile Include="Messaging\ProjectMessages\UpdateProjectTypeResponse.cs" />
+    <Compile Include="Messaging\ResponseBase.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\CreateScoreCardVarianceTypeResponse.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\CreateScoreCardVarianceTypeRequest.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\DeleteScoreCardVarianceTypeRequest.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\DeleteScoreCardVarianceTypeResponse.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\ListScoreCardVarianceTypesRequest.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\ListScoreCardVarianceTypesResponse.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\ReadScoreCardVarianceTypeRequest.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\ReadScoreCardVarianceTypeResponse.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\UpdateScoreCardVarianceTypeRequest.cs" />
+    <Compile Include="Messaging\ScoreCardMessages\UpdateScoreCardVarianceTypeResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AccountViewModels\RoleSummaryView.cs" />
+    <Compile Include="ViewModels\AccountViewModels\RoleView.cs" />
+    <Compile Include="ViewModels\AccountViewModels\UserAccountSummaryView.cs" />
+    <Compile Include="ViewModels\AccountViewModels\UserAccountView.cs" />
+    <Compile Include="ViewModels\AgreementViewModels\AgreementStatusSummaryView.cs" />
+    <Compile Include="ViewModels\AgreementViewModels\AgreementStatusView.cs" />
+    <Compile Include="ViewModels\AgreementViewModels\AgreementTypeSummaryView.cs" />
+    <Compile Include="ViewModels\AgreementViewModels\AgreementTypeView.cs" />
+    <Compile Include="ViewModels\CalendarViewModels\CalendarDayTypeSummaryView.cs" />
+    <Compile Include="ViewModels\CalendarViewModels\CalendarDayTypeView.cs" />
+    <Compile Include="ViewModels\CalendarViewModels\CalendarSummaryView.cs" />
+    <Compile Include="ViewModels\CalendarViewModels\CalendarView.cs" />
+    <Compile Include="ViewModels\CompanyViewModels\CompanySummaryView.cs" />
+    <Compile Include="ViewModels\CompanyViewModels\CompanyTypeSummaryView.cs" />
+    <Compile Include="ViewModels\CompanyViewModels\CompanyTypeView.cs" />
+    <Compile Include="ViewModels\CompanyViewModels\CompanyView.cs" />
+    <Compile Include="ViewModels\ContractorViewModels\ContractorStatusSummaryView.cs" />
+    <Compile Include="ViewModels\ContractorViewModels\ContractorStatusView.cs" />
+    <Compile Include="ViewModels\ContractorViewModels\ContractorSummaryView.cs" />
+    <Compile Include="ViewModels\ContractorViewModels\ContractorView.cs" />
+    <Compile Include="ViewModels\EmployeeViewModels\DebitStatusSummaryView.cs" />
+    <Compile Include="ViewModels\EmployeeViewModels\DebitStatusView.cs" />
+    <Compile Include="ViewModels\EmployeeViewModels\DebitTypeSummaryView.cs" />
+    <Compile Include="ViewModels\EmployeeViewModels\DebitTypeView.cs" />
+    <Compile Include="ViewModels\EmployeeViewModels\FileStatusSummaryView.cs" />
+    <Compile Include="ViewModels\EmployeeViewModels\FileStatusView.cs" />
+    <Compile Include="ViewModels\EmployeeViewModels\FileTypeSummaryView.cs" />
+    <Compile Include="ViewModels\EmployeeViewModels\FileTypeView.cs" />
+    <Compile Include="ViewModels\FinancialViewModels\FinancialActivityTypeSummaryView.cs" />
+    <Compile Include="ViewModels\FinancialViewModels\FinancialActivityTypeView.cs" />
+    <Compile Include="ViewModels\FinancialViewModels\PaymentTypeSummaryView.cs" />
+    <Compile Include="ViewModels\FinancialViewModels\PaymentTypeView.cs" />
+    <Compile Include="ViewModels\OperationCenterViewModels\OperationCenterStatusSummaryView.cs" />
+    <Compile Include="ViewModels\OperationCenterViewModels\OperationCenterStatusView.cs" />
+    <Compile Include="ViewModels\OperationCenterViewModels\OperationCenterTypeSummaryView.cs" />
+    <Compile Include="ViewModels\OperationCenterViewModels\OperationCenterTypeView.cs" />
+    <Compile Include="ViewModels\ProjectViewModels\ProjectStatusSummaryView.cs" />
+    <Compile Include="ViewModels\ProjectViewModels\ProjectStatusView.cs" />
+    <Compile Include="ViewModels\ProjectViewModels\ProjectSummaryView.cs" />
+    <Compile Include="ViewModels\ProjectViewModels\ProjectTypeSummaryView.cs" />
+    <Compile Include="ViewModels\ProjectViewModels\ProjectTypeView.cs" />
+    <Compile Include="ViewModels\ProjectViewModels\ProjectView.cs" />
+    <Compile Include="ViewModels\ScoreCardViewModels\ScoreCardVarianceTypeSummaryView.cs" />
+    <Compile Include="ViewModels\ScoreCardViewModels\ScoreCardVarianceTypeView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSS.Infrastructure\CSS.Infrastructure.csproj">
+      <Project>{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E}</Project>
+      <Name>CSS.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSS.OpusForce.Model\CSS.OpusForce.Model.csproj">
+      <Project>{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08}</Project>
+      <Name>CSS.OpusForce.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

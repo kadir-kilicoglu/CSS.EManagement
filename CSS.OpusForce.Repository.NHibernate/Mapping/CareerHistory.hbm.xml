@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Employees" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CareerHistory" table="CareerHistory" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="CompanyName">
+      <column name="CompanyName" sql-type="nvarchar(128)" not-null="false" />
+    </property>
+    <property name="ContractorName">
+      <column name="ContractorName" sql-type="nvarchar(128)" not-null="false" />
+    </property>
+    <property name="SkillName">
+      <column name="SkillName" sql-type="nvarchar(128)" not-null="false" />
+    </property>
+    <property name="AssignedDutyName">
+      <column name="AssignedDutyName" sql-type="nvarchar(128)" not-null="false" />
+    </property>
+    <property name="AssignedDutyRate">
+      <column name="AssignedDutyRate" sql-type="decimal(10,2)" not-null="false" />
+    </property>
+    <property name="AssignedDutyRateCurrency">
+      <column name="AssignedDutyRateCurrency" sql-type="nvarchar(8" not-null="false" />
+    </property>
+    <property name="AgreementNumber">
+      <column name="AgreementNumber" sql-type="nvarchar(64)" not-null="false" />
+    </property>
+    <property name="StartDate">
+      <column name="StartDate" sql-type="date" not-null="true" />
+    </property>
+    <property name="EndDate">
+      <column name="EndDate" sql-type="date" not-null="false" />
+    </property>
+
+    <many-to-one name="Employee"
+                      class="Employee"
+                      column="EmployeeId"
+                      not-null="false" />
+  </class>
+</hibernate-mapping>

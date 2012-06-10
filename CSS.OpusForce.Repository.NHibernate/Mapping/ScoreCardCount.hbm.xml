@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.ScoreCards" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ScoreCardCount" table="ScoreCardCount" lazy="true" >
+    
+    <composite-id name="ScoreCardCountIdentifier" class="ScoreCardCountIdentifier">
+      <key-property name="ContractorId" column="ContractorId" />
+      <key-property name="CalendarDayId" column="CalendarDayId" />
+    </composite-id>
+
+    <property name="Count" column="Count" />
+    
+    <many-to-one name="Contractor"
+                     class="CSS.OpusForce.Model.Contractors.Contractor"
+                     column="ContractorId"
+                     not-null="true" />
+    <many-to-one name="CalendarDay"
+                     class="CSS.OpusForce.Model.Calendars.CalendarDay"
+                     column="CalendarDayId"
+                     not-null="true" />    
+  </class>
+</hibernate-mapping>

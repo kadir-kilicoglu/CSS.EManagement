@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Employees" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AssignedDuty" table="AssignedDuty" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="Rate">
+      <column name="Rate" sql-type="decimal(10,2)" not-null="false" />
+    </property>
+
+    <many-to-one name="Currency"
+                      class="CSS.OpusForce.Model.Financials.Currency"
+                      column="CurrencyId"
+                      not-null="false" />
+    <many-to-one name="PaymentType"
+                      class="CSS.OpusForce.Model.Financials.PaymentType"
+                      column="PaymentTypeId"
+                      not-null="true" />
+    <many-to-one name="PaymentPeriod"
+                      class="CSS.OpusForce.Model.Financials.PaymentPeriod"
+                      column="PaymentPeriodId"
+                      not-null="true" />
+    <many-to-one name="Calendar"
+                      class="CSS.OpusForce.Model.Calendars.Calendar"
+                      column="CalendarId"
+                      not-null="false" />
+    
+    <bag name="Employees" inverse="true" cascade="none" lazy="true">
+      <key column="AssignedDutyId" />
+      <one-to-many class="CSS.OpusForce.Model.Employees.Employee" />
+    </bag>
+  </class>
+</hibernate-mapping>

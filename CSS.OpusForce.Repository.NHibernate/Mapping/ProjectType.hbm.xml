@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Projects" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ProjectType" table="ProjectType" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar" not-null="false" />
+    </property>
+    <bag name="Projects" inverse="true" cascade="none">
+      <key column="ProjectTypeId" />
+      <one-to-many class="Project" />
+    </bag>
+  </class>
+</hibernate-mapping>

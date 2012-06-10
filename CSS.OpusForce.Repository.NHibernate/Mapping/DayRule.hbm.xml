@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Calendars" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="DayRule" table="DayRule" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="StartHour">
+      <column name="StartHour" sql-type="int" not-null="true" />
+    </property>
+    <property name="EndHour">
+      <column name="EndHour" sql-type="int" not-null="false" />
+    </property>
+    <property name="Coefficient">
+      <column name="Coefficient" sql-type="float" not-null="true" />
+    </property>
+    
+    <bag name="CalendarDayRules" inverse="true" cascade="none" lazy="true">
+      <key column="RuleId" />
+      <one-to-many class="CalendarDayRule" />
+    </bag>
+  </class>
+</hibernate-mapping>

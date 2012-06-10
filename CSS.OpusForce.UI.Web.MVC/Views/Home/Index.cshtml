@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header-band" class="bg-black">    
+    <div class="ym-wrapper">
+        <div class="ym-grid top-35">
+            <div class="ym-gl">
+                <img alt="OpusForce Logo" src="@Url.Content("~/Content/images/logo.png")" />
+            </div>
+            <div class="ym-gr">
+                @Html.ActionLink("Home", "Index", "Home", null, new { Class = "btnLogin" })
+            </div>
+        </div> 
+    </div>        
+</div>
+<div class="clearfix"></div>
+
+<div id="main">
+    <div class="ym-wrapper">
+        
+        
+        
+               
+        <div class="ym-grid linearize-level-1">
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Firmalar", "CompanyList", "Company", null, new { Class = "btnCompany" })</div> 
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Projeler", "ProjectList", "Project", null, new { Class = "btnProject" })</div>
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Home", "Index", "Home", new { Class = "btnContractor" })</div> 
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Home", "Index", "Home", new { Class = "btnEmployee" })</div>
+
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Home", "Index", "Home", new { Class = "btnAgreement" })</div> 
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Home", "Index", "Home", new { Class = "btnCalendar" })</div>
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Home", "Index", "Home", new { Class = "btnScorecard" })</div> 
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Home", "Index", "Home", new { Class = "btnFinance" })</div>
+
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Kullanıcılar", "UserAccountList", "Account", null, new { Class = "btnUser" })</div> 
+            <div class="ym-g960-4 ym-gl">@Html.ActionLink("Home", "Index", "Home", new { Class = "btnSetting" })</div>
+            <div class="ym-g960-8 ym-gl">@Html.ActionLink("Home", "Index", "Home", new { Class = "btnReports" })</div>            
+        </div>
+    </div>
+</div>
+<div id="footer-band">
+    <div class="ym-wrapper bg-black center-content"><br />
+        <a href="http://www.css.net.tr" target="_top" class="btnContact"></a>
+        <hr style="width:50%;margin:0 auto;" />
+        <p>www.css.net.tr | C.S.S Yazılım Çözümler Ltd. Şti. &copy; 2012</p><br />
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Financials" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Currency" table="Currency" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="ToBaseConversion">
+      <column name="ToBaseConversion" sql-type="float" not-null="true" />
+    </property>
+    <property name="FromBaseConversion">
+      <column name="FromBaseConversion" sql-type="float" not-null="true" />
+    </property>
+    
+    <bag name="AssignedDuties" inverse="true" cascade="none" lazy="true">
+      <key column="CurrencyId" />
+      <one-to-many class="CSS.OpusForce.Model.Employees.AssignedDuty" />
+    </bag>
+    <bag name="EmployeeDebits" inverse="true" cascade="none" lazy="true">
+      <key column="CurrencyId" />
+      <one-to-many class="CSS.OpusForce.Model.Employees.EmployeeDebit" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Employees" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Employee" table="Employee" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>    
+    
+    <property name="IdNumber">
+      <column name="IdNumber" sql-type="nvarchar(11)" not-null="true" />
+    </property>
+    <property name="SSN">
+      <column name="SSN" sql-type="nvarchar(32)" not-null="false" />
+    </property>    
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Surname">
+      <column name="Surname" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Address">
+      <column name="Address" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="PhoneNumber1">
+      <column name="PhoneNumber1" sql-type="nvarchar(32)" not-null="false" />
+    </property>
+    <property name="PhoneNumber2">
+      <column name="PhoneNumber2" sql-type="nvarchar(32)" not-null="false" />
+    </property>
+    <property name="BankAccountNumber">
+      <column name="BankAccountNumber" sql-type="nvarchar(32)" not-null="false" />
+    </property>
+
+    <many-to-one name="Skill"
+                      class="Skill"
+                      column="SkillId"
+                      not-null="true" />
+    <many-to-one name="Company"
+                      class="CSS.OpusForce.Model.Companies.Company"
+                      column="CompanyId"
+                      not-null="false" />
+    <many-to-one name="Contractor"
+                      class="CSS.OpusForce.Model.Contractors.Contractor"
+                      column="ContractorId"
+                      not-null="false" />
+    <many-to-one name="Agreement"
+                      class="CSS.OpusForce.Model.Agreements.Agreement"
+                      column="AgreementId"
+                      not-null="false" />
+    <many-to-one name="AssignedDuty"
+                      class="AssignedDuty"
+                      column="AssignedDutyId"
+                      not-null="false" />    
+    
+    <bag name="Agreements" inverse="true" cascade="none" lazy="true">
+      <key column="EmployeeId" />
+      <one-to-many class="CSS.OpusForce.Model.Agreements.Agreement" />
+    </bag>
+    <bag name="CareerHistories" inverse="true" cascade="none" lazy="true">
+      <key column="EmployeeId" />
+      <one-to-many class="CareerHistory" />
+    </bag>
+    <bag name="EmployeeDebits" inverse="true" cascade="none" lazy="true">
+      <key column="EmployeeId" />
+      <one-to-many class="EmployeeDebit" />
+    </bag>
+    <bag name="EmployeeFiles" inverse="true" cascade="none" lazy="true">
+      <key column="EmployeeId" />
+      <one-to-many class="EmployeeFile" />
+    </bag>
+    <bag name="ScoreCards" inverse="true" cascade="none" lazy="true">
+      <key column="EmployeeId" />
+      <one-to-many class="CSS.OpusForce.Model.ScoreCards.ScoreCard" />
+    </bag>
+  </class>
+</hibernate-mapping>

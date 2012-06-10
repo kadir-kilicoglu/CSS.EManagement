@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Projects" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Project" table="Project" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="StartDate">
+      <column name="StartDate" sql-type="date" not-null="true" />
+    </property>
+    <property name="EndDate">
+      <column name="EndDate" sql-type="date" not-null="false" />
+    </property>
+
+    <many-to-one name="ProjectStatus"
+                      class="ProjectStatus"
+                      column="ProjectStatusId"
+                      not-null="true" />
+    <many-to-one name="ProjectType"
+                      class="ProjectType"
+                      column="ProjectTypeId"
+                      not-null="true" />
+    <many-to-one name="Company"
+                      class="CSS.OpusForce.Model.Companies.Company"
+                      column="CompanyId"
+                      not-null="true" />    
+    
+    <bag name="OperationCenters" inverse="true" cascade="none" lazy="true">
+      <key column="ProjectId" />
+      <one-to-many class="CSS.OpusForce.Model.OperationCenters.OperationCenter" />
+    </bag>
+  </class>
+</hibernate-mapping>

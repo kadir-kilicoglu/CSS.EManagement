@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.ScoreCards" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ScoreCardVariance" table="ScoreCardVariance" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar" not-null="false" />
+    </property>
+    <property name="VarianceAmount">
+      <column name="VarianceAmount" sql-type="decimal" not-null="true" />
+    </property>
+
+    <many-to-one name="ScoreCard"
+                      class="ScoreCard"
+                      column="ScoreCardId"
+                      not-null="false" />
+    <many-to-one name="VarianceType"
+                      class="VarianceType"
+                      column="VarianceTypeId"
+                      not-null="false" />    
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Calendars" xmlns="urn:nhibernate-mapping-2.2">
+  
+  <class name="CalendarDayRule" table="CalendarDayRule" lazy="true" >
+    
+    <composite-id name="CalendarDayRuleIdentifier" class="CalendarDayRuleIdentifier">
+      <key-property name="CalendarDayId" column="CalendarDayId" />
+      <key-property name="RuleId" column="RuleId" />
+    </composite-id>
+
+    <many-to-one name="DayRule"
+                      class="DayRule"
+                      column="RuleId"
+                      not-null="true" />
+    <many-to-one name="CalendarDay"
+                      class="CalendarDay"
+                      column="CalendarDayId"
+                      not-null="true" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A02AEEDE-B2DC-4670-9780-AF9B7761EE40}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSS.OpusForce.UI.Web.MVC</RootNamespace>
+    <AssemblyName>CSS.OpusForce.UI.Web.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=3.2.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\NHibernate - 3.2.0.GA\Required_Bins\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\Sample Applications\ASP .NET Design Patterns Code\Agathas Storefront ECommerce\Agathas.Storefront.UI.Web.MVC\bin\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.Mvc">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\Extensions for ASP.NET MVC Q3 2011\Binaries\Mvc3\Telerik.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\GridLocalization.tr-TR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GridLocalization.tr-TR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="BootStrapper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IoCControllerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\basemod.css" />
+    <Content Include="Content\central.css" />
+    <Content Include="Content\images\btn_agreement.png" />
+    <Content Include="Content\images\btn_back.png" />
+    <Content Include="Content\images\btn_calendar.png" />
+    <Content Include="Content\images\btn_company.png" />
+    <Content Include="Content\images\btn_contact.png" />
+    <Content Include="Content\images\btn_contractor.png" />
+    <Content Include="Content\images\btn_employee.png" />
+    <Content Include="Content\images\btn_finance.png" />
+    <Content Include="Content\images\btn_home.png" />
+    <Content Include="Content\images\btn_login.png" />
+    <Content Include="Content\images\btn_project.png" />
+    <Content Include="Content\images\btn_reports.png" />
+    <Content Include="Content\images\btn_scorecard.png" />
+    <Content Include="Content\images\btn_setting.png" />
+    <Content Include="Content\images\btn_up.png" />
+    <Content Include="Content\images\btn_user.png" />
+    <Content Include="Content\images\icon_company.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\telerik.common.min.css" />
+    <Content Include="Content\yaml\add-ons\accessible-tabs\jquery.tabs.js" />
+    <Content Include="Content\yaml\add-ons\accessible-tabs\tabs.css" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\external_link.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\hcalendar.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\hcard.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-geo.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-hatom.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-haudio.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-hcalendar-add.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-hcalendar-download.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-hcalendar.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-hcard-add.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-hcard-download.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-hcard.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-hresume.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-rel-tag.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\icon-xfn.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-child.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-colleague-met.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-colleague.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-friend-met.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-friend.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-me.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-parent.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-small.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-spouse.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-sweetheart-met.png" />
+    <Content Include="Content\yaml\add-ons\microformats\icons\xfn\xfn-sweetheart.png" />
+    <Content Include="Content\yaml\add-ons\microformats\microformats.css" />
+    <Content Include="Content\yaml\add-ons\rtl-support\core\base-rtl.css" />
+    <Content Include="Content\yaml\add-ons\rtl-support\core\base-rtl.min.css" />
+    <Content Include="Content\yaml\add-ons\rtl-support\navigation\hlist-rtl.css" />
+    <Content Include="Content\yaml\add-ons\rtl-support\navigation\vlist-rtl.css" />
+    <Content Include="Content\yaml\add-ons\rtl-support\screen\typography-rtl.css" />
+    <Content Include="Content\yaml\add-ons\syncheight\jquery.syncheight.js" />
+    <Content Include="Content\yaml\core\base.css" />
+    <Content Include="Content\yaml\core\base.min.css" />
+    <Content Include="Content\yaml\core\iehacks.css" />
+    <Content Include="Content\yaml\core\iehacks.min.css" />
+    <Content Include="Content\yaml\core\js\yaml-focusfix.js" />
+    <Content Include="Content\yaml\forms\gray-theme.css" />
+    <Content Include="Content\yaml\navigation\hlist.css" />
+    <Content Include="Content\yaml\navigation\vlist.css" />
+    <Content Include="Content\yaml\print\print.css" />
+    <Content Include="Content\yaml\screen\grid-960-12.css" />
+    <Content Include="Content\yaml\screen\grid-960-16.css" />
+    <Content Include="Content\yaml\screen\screen-fullpage.css" />
+    <Content Include="Content\yaml\screen\screen-page.css" />
+    <Content Include="Content\yaml\screen\typography.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\telerik.autocomplete.min.js" />
+    <Content Include="Scripts\telerik.calendar.min.js" />
+    <Content Include="Scripts\telerik.chart.min.js" />
+    <Content Include="Scripts\telerik.combobox.min.js" />
+    <Content Include="Scripts\telerik.common.min.js" />
+    <Content Include="Scripts\telerik.datepicker.min.js" />
+    <Content Include="Scripts\telerik.datetimepicker.min.js" />
+    <Content Include="Scripts\telerik.draganddrop.min.js" />
+    <Content Include="Scripts\telerik.editor.min.js" />
+    <Content Include="Scripts\telerik.grid.editing.min.js" />
+    <Content Include="Scripts\telerik.grid.filtering.min.js" />
+    <Content Include="Scripts\telerik.grid.grouping.min.js" />
+    <Content Include="Scripts\telerik.grid.min.js" />
+    <Content Include="Scripts\telerik.grid.reordering.min.js" />
+    <Content Include="Scripts\telerik.grid.resizing.min.js" />
+    <Content Include="Scripts\telerik.imagebrowser.min.js" />
+    <Content Include="Scripts\telerik.list.min.js" />
+    <Content Include="Scripts\telerik.menu.min.js" />
+    <Content Include="Scripts\telerik.panelbar.min.js" />
+    <Content Include="Scripts\telerik.slider.min.js" />
+    <Content Include="Scripts\telerik.splitter.min.js" />
+    <Content Include="Scripts\telerik.tabstrip.min.js" />
+    <Content Include="Scripts\telerik.textbox.min.js" />
+    <Content Include="Scripts\telerik.timepicker.min.js" />
+    <Content Include="Scripts\telerik.treeview.min.js" />
+    <Content Include="Scripts\telerik.upload.min.js" />
+    <Content Include="Scripts\telerik.window.min.js" />
+    <Content Include="Content\Metro\editor.png" />
+    <Content Include="Content\Metro\imagebrowser.png" />
+    <Content Include="Content\Metro\loading.gif" />
+    <Content Include="Content\Metro\slider-h.gif" />
+    <Content Include="Content\Metro\slider-v.gif" />
+    <Content Include="Content\Metro\sprite.png" />
+    <Content Include="Content\telerik.metro.min.css" />
+    <Content Include="Content\telerik.telerik.min.css" />
+    <Content Include="Content\Telerik\editor.png" />
+    <Content Include="Content\Telerik\imagebrowser.png" />
+    <Content Include="Content\Telerik\loading.gif" />
+    <Content Include="Content\Telerik\slider-h.gif" />
+    <Content Include="Content\Telerik\slider-v.gif" />
+    <Content Include="Content\Telerik\sprite-vertical.png" />
+    <Content Include="Content\Telerik\sprite.png" />
+    <Content Include="Content\Telerik\treeview-line.png" />
+    <Content Include="Content\Telerik\treeview-nodes-rtl.png" />
+    <Content Include="Content\Telerik\treeview-nodes.png" />
+    <Content Include="Scripts\uni-form-validation.jquery.min.js" />
+    <Content Include="Scripts\uni-form.jquery.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompanyList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\GridLocalization.tr-TR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>GridLocalization.tr-TR.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSS.Infrastructure\CSS.Infrastructure.csproj">
+      <Project>{00C8FF52-E0ED-4B90-8F8C-A67133E11A9E}</Project>
+      <Name>CSS.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSS.OpusForce.Model\CSS.OpusForce.Model.csproj">
+      <Project>{EA92CE4C-E734-4A2D-AAA1-6350C56BAC08}</Project>
+      <Name>CSS.OpusForce.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSS.OpusForce.Repository.NHibernate\CSS.OpusForce.Repository.NHibernate.csproj">
+      <Project>{546C0B58-6DF4-44D9-9BB7-C2272AD5E48C}</Project>
+      <Name>CSS.OpusForce.Repository.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSS.OpusForce.Services\CSS.OpusForce.Services.csproj">
+      <Project>{9DBCC92B-0751-43CE-86EA-826C1B4EE571}</Project>
+      <Name>CSS.OpusForce.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompanyTypeList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompanyTypeCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompanyTypeRead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompanyTypeUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contractor\ContractorStatusList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contractor\ContractorStatusCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contractor\ContractorStatusRead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contractor\ContractorStatusUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contractor\ContractorList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contractor\ContractorCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contractor\ContractorRead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contractor\ContractorUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RoleList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\UserAccountList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RoleCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RoleRead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RoleUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\UserAccountCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\UserAccountRead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\UserRoleUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompanyCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompanyRead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompanyUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectTypeList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectTypeCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectTypeRead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectTypeUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectStatusCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectStatusList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectStatusRead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectStatusUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\ProjectRead.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49815</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

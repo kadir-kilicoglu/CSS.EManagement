@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Employees" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="EmployeeDebit" table="EmployeeDebit" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>    
+    
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="TransactionDate">
+      <column name="TransactionDate" sql-type="date" not-null="true" />
+    </property>
+    <property name="DueDate">
+      <column name="DueDate" sql-type="date" not-null="false" />
+    </property>
+    <property name="Amount">
+      <column name="Amount" sql-type="decimal(10,2)" not-null="true" />
+    </property>
+
+    <many-to-one name="Employee"
+                      class="Employee"
+                      column="EmployeeId"
+                      not-null="true" />
+    <many-to-one name="DebitType"
+                      class="DebitType"
+                      column="DebitTypeId"
+                      not-null="true" />
+    <many-to-one name="Currency"
+                      class="CSS.OpusForce.Model.Financials.Currency"
+                      column="CurrencyId"
+                      not-null="true" />
+    <many-to-one name="DebitStatus"
+                      class="DebitStatus"
+                      column="DebitStatusId"
+                      not-null="true" />    
+    
+    <bag name="EmployeeFinanceRecords" inverse="true" cascade="none" lazy="true">
+      <key column="EmployeeDebitId" />
+      <one-to-many class="EmployeeFinanceRecord" />
+    </bag>
+  </class>
+</hibernate-mapping>

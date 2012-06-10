@@ -1,0 +1,64 @@
+﻿@using CSS.OpusForce.Services.ViewModels;
+@model UserAccountView
+
+@{
+    ViewBag.Title = "Kullanıcı Ekleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header-band" class="bg-blue">    
+   @Html.ActionLink("Kullanıcılar", "UserAccountList", "Account", null, new { Class = "btnBack" })
+    @Html.ActionLink("Anasayfa", "Index", "Home", null, new { Class = "btnHome" })   
+    <div class="ym-wrapper">
+        <div class="ym-grid top-35">
+            <div class="ym-gl">
+                <img alt="OpusForce Logo" src="@Url.Content("~/Content/images/logo.png")" />
+            </div>
+            <div class="ym-gr">
+                @Html.ActionLink("Home", "Index", "Home", null, new { Class = "btnLogin" })
+            </div>
+        </div> 
+    </div>           
+</div>
+<div class="clearfix"></div>
+<div id="main">
+    <div class="ym-wrapper">        
+        <div class="ym-hlist">
+          <ul>
+            <li class="active">@Html.ActionLink("Kullanıcılar", "UserAccountList", "Account", null)</li>
+            <li>@Html.ActionLink("Roller", "RoleList", "Account", null)</li>
+          </ul>
+        </div>
+        <hr />
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { Class="ym-form ym-columnar" }))
+        {   
+            @Html.ValidationSummary() 
+            
+            if (!String.IsNullOrEmpty((string)ViewData["Error"]))
+            {
+                <p class="box error">@ViewData["Error"]</p>
+                <hr />
+            }
+            
+            <div class="ym-fbox-text">
+                <label for="UserName">Kullanıcı Adı</label>
+                @Html.TextBoxFor(c => c.UserName)
+            </div>
+            
+            <div class="ym-fbox-text">
+                <label for="Password">Şifre</label>
+                @Html.PasswordFor(c => c.Password)
+            </div>
+            
+            <div class="ym-fbox-select">
+                <label for="Company">Firma</label>
+                @Html.DropDownList("Companies", new SelectList((IEnumerable<CompanySummaryView>)ViewData["Companies"], "Id", "Name"))   
+            </div>            
+    
+            <div class="ym-fbox-button">
+                @Html.ActionLink("Vazgeç ve geri dön", "UserAccountList", "Account", null, new { Class = "ym-button ym-left-arrow" }) 
+                <button class="ym-button ym-add">Kaydet</button>
+            </div>   
+        }        
+    </div>
+</div>

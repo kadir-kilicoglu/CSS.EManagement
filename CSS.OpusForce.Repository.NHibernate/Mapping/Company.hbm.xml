@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Companies" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Company" table="Company" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />      
+    </id>
+
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="IsActive">
+      <column name="IsActive" sql-type="bit" not-null="true" />
+    </property>
+
+    <many-to-one name="ParentCompany"
+                      class="Company"
+                      column="ParentId"
+                      not-null="false" />
+    <many-to-one name="CompanyType"
+                      class="CompanyType"
+                      column="CompanyTypeId"
+                      not-null="true" />
+    
+    <bag name="Companies" inverse="true" cascade="none" lazy="true">
+      <key column="ParentId" />
+      <one-to-many class="Company" />
+    </bag>
+    <bag name="Employees" inverse="true" cascade="none" lazy="true">
+      <key column="CompanyId" />
+      <one-to-many class="CSS.OpusForce.Model.Employees.Employee" />
+    </bag>
+    <bag name="OperationCenters" inverse="true" cascade="none" lazy="true">
+      <key column="ResponsibleCompanyId" />
+      <one-to-many class="CSS.OpusForce.Model.OperationCenters.OperationCenter" />
+    </bag>
+    <bag name="Projects" inverse="true" cascade="none" lazy="true">
+      <key column="CompanyId" />
+      <one-to-many class="CSS.OpusForce.Model.Projects.Project" />
+    </bag>
+    <bag name="UserAccounts" inverse="true" cascade="none" lazy="true">
+      <key column="CompanyId" />
+      <one-to-many class="CSS.OpusForce.Model.Accounts.UserAccount" />
+    </bag>
+  </class>
+</hibernate-mapping>

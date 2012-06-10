@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Agreements" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AgreementType" table="AgreementType" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    
+    <bag name="Agreements" inverse="true" cascade="none" lazy="true">
+      <key column="AgreementTypeId" />
+      <one-to-many class="Agreement" />
+    </bag>
+  </class>
+</hibernate-mapping>

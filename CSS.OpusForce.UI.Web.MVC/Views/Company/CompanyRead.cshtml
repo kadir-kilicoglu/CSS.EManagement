@@ -1,0 +1,86 @@
+﻿@using CSS.OpusForce.Services.ViewModels;
+@model CompanyView
+
+@{
+    ViewBag.Title = "Firma Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";   
+}
+
+<div id="header-band" class="bg-blue">    
+   @Html.ActionLink("Firmalar", "CompanyList", "Company", null, new { Class = "btnBack" })
+   @Html.ActionLink("Anasayfa", "Index", "Home", null, new { Class = "btnHome" })   
+   <div class="ym-wrapper">
+       <div class="ym-grid top-35">
+           <div class="ym-gl">
+               <img alt="OpusForce Logo" src="@Url.Content("~/Content/images/logo.png")" />
+           </div>
+           <div class="ym-gr">
+               @Html.ActionLink("Home", "Index", "Home", null, new { Class = "btnLogin" })
+           </div>
+       </div> 
+   </div>           
+</div>
+<div class="clearfix"></div>
+<div id="main">
+    <div class="ym-wrapper">   
+        <div class="ym-hlist">
+          <ul>
+            <li class="active">@Html.ActionLink("Firmalar", "CompanyList", "Company", null, null)</li>
+            <li>@Html.ActionLink("Firma Faaliyet Alanları", "CompanyTypeList", "Company", null, null)</li>
+          </ul>
+        </div>
+        <hr />
+
+        @if ((bool)TempData["Add"])
+        {
+            <p class="box success">Tebrikler! Kayıt Başarıyla Oluşturuldu.</p>
+            <hr />
+        }
+        @if ((bool)TempData["Update"])
+        {
+            <p class="box success">Tebrikler! Kayıt Başarıyla Güncelleştirildi.</p>
+            <hr />
+        }
+        
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Firma No.</b></div><div class="ym-g62 ym-gr">: @Model.Id</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Firma Adı</b></div><div class="ym-g62 ym-gr">: @Model.Name</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Firma Açıklaması</b></div><div class="ym-g62 ym-gr">: @Model.Description</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Firma Aktif Mi?</b></div><div class="ym-g62 ym-gr">: @(Model.IsActive ? "Evet" : "Hayır")</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Firma Faaliyet Alanı</b></div><div class="ym-g62 ym-gr">: @Model.CompanyTypeName</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid ym-gbox">
+            <div class="ym-g38 ym-gl"><b>Bağlı Olduğu Firma</b></div><div class="ym-g62 ym-gr">: @Model.ParentCompanyName</div>
+        </div>
+        <div class="ym-grid">
+            <hr class="thick" />
+        </div>
+        <div class="ym-grid">
+             @Html.ActionLink("Geri dön", "CompanyList", "Company", null, new { Class = "ym-button ym-left-arrow" })
+             @Html.ActionLink("Düzenle", "CompanyUpdate", "Company", new { id = Model.Id }, new { Class = "ym-button ym-edit" })
+        </div>        
+    </div>
+</div>

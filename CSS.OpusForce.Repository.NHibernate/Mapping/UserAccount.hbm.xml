@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Accounts" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="UserAccount" table="UserAccount" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="Username">
+      <column name="Username" sql-type="nvarchar" not-null="true" />
+    </property>
+    <property name="Password">
+      <column name="Password" sql-type="nvarchar" not-null="true" />
+    </property>
+
+    <many-to-one name="Company"
+                     class="CSS.OpusForce.Model.Companies.Company"
+                     column="CompanyId"
+                     not-null="false" />
+    
+    <bag name="UserRoles" inverse="true" cascade="none" lazy="true">
+      <key column="UserId" />
+      <one-to-many class="UserRole" />
+    </bag>
+  </class>
+</hibernate-mapping>

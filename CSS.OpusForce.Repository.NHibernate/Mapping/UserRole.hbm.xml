@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Accounts" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="UserRole" table="UserRole" lazy="true" >
+    
+    <composite-id name="UserRoleIdentifier" class="UserRoleIdentifier">
+      <key-property name="UserId" column="UserId" type="Int32" />
+      <key-property name="RoleId" column="RoleId" type="Int32" />
+    </composite-id>
+
+    <many-to-one name="UserAccount"
+                     class="UserAccount"
+                     column="UserId"
+                     not-null="true" />
+    <many-to-one name="Role"
+                     class="Role"
+                     column="RoleId"
+                     not-null="true" />    
+  </class>
+</hibernate-mapping>

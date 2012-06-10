@@ -1,0 +1,72 @@
+﻿@using CSS.OpusForce.Services.ViewModels;
+@model CompanyTypeView
+
+@{
+    ViewBag.Title = "Firma Faaliyet Alanı Düzenleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";   
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('form.uniForm').uniform({
+            prevent_submit: true
+        });
+    });
+</script>
+
+<div id="header-band" class="bg-blue">    
+   @Html.ActionLink("Firmalar", "CompanyTypeList", "Company", null, new { Class = "btnBack" })
+   @Html.ActionLink("Anasayfa", "Index", "Home", null, new { Class = "btnHome" })   
+   <div class="ym-wrapper">
+       <div class="ym-grid top-35">
+           <div class="ym-gl">
+               <img alt="OpusForce Logo" src="@Url.Content("~/Content/images/logo.png")" />
+           </div>
+           <div class="ym-gr">
+               @Html.ActionLink("Home", "Index", "Home", null, new { Class = "btnLogin" })
+           </div>
+       </div> 
+   </div>           
+</div>
+<div class="clearfix"></div>
+<div id="main">
+    <div class="ym-wrapper">   
+        <div class="ym-hlist">
+          <ul>
+            <li>@Html.ActionLink("Firmalar", "CompanyList", "Company", null, null)</li>
+            <li class="active">@Html.ActionLink("Firma Faaliyet Alanları", "CompanyTypeList", "Company", null, null)</li>
+          </ul>
+        </div>
+        <hr />
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { Class="ym-form ym-columnar" }))
+        {   
+            @Html.ValidationSummary() 
+            
+            if (!String.IsNullOrEmpty((string)TempData["Error"]))
+            {
+                <p class="box error">@TempData["Error"]</p>
+                <hr />
+            }
+            
+            <div class="ym-fbox-text">
+                <label for="Id">Faaliyet Alanı No.</label>
+                @Html.TextBoxFor(c => c.Id, new { @readonly = "readonly" })
+            </div>
+            
+            <div class="ym-fbox-text">
+                <label for="Name">Faaliyet Alan Adı</label>
+                @Html.TextBoxFor(c => c.Name)
+            </div>
+            
+            <div class="ym-fbox-text">
+                <label for="Description">Faaliyet Alanı Açıklaması</label>
+                @Html.TextAreaFor(c => c.Description, new { rows = "5" })
+            </div>
+    
+            <div class="ym-fbox-button">
+                @Html.ActionLink("Vazgeç ve geri dön", "CompanyTypeRead", "Company", new { Model.Id }, new { Class = "ym-button ym-left-arrow" }) 
+                <button class="ym-button ym-save">Güncelle</button>
+            </div>   
+        }        
+    </div>
+</div>

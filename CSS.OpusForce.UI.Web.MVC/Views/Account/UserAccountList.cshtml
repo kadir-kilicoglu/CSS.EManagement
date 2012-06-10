@@ -1,0 +1,80 @@
+﻿@using CSS.OpusForce.Services.ViewModels;
+@model IEnumerable<UserAccountSummaryView>
+
+@{
+    ViewBag.Title = "Kullanıcı Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header-band" class="bg-blue">    
+   @Html.ActionLink("Kullanıcılar", "UserAccountList", "Account", null, new { Class = "btnBack" })
+    @Html.ActionLink("Anasayfa", "Index", "Home", null, new { Class = "btnHome" })   
+    <div class="ym-wrapper">
+        <div class="ym-grid top-35">
+            <div class="ym-gl">
+                <img alt="OpusForce Logo" src="@Url.Content("~/Content/images/logo.png")" />
+            </div>
+            <div class="ym-gr">
+                @Html.ActionLink("Home", "Index", "Home", null, new { Class = "btnLogin" })
+            </div>
+        </div> 
+    </div>           
+</div>
+<div class="clearfix"></div>
+<div id="main">
+    <div class="ym-wrapper">        
+        <div class="ym-hlist">
+          <ul>
+            <li class="active">@Html.ActionLink("Kullanıcılar", "UserAccountList", "Account", null)</li>
+            <li>@Html.ActionLink("Roller", "RoleList", "Account", null)</li>
+          </ul>
+        </div>
+        <hr />
+        
+        @if (!String.IsNullOrEmpty((string)ViewData["Error"]))
+        {
+            <p class="box error">@ViewData["Error"]</p>
+            <hr />
+        }
+        @if ((bool)ViewData["Delete"])
+        {
+            <p class="box warning">Tebrikler! Kayıt Başarıyla Silindi.</p>
+            <hr />
+        }
+        
+        @(Html.Telerik().Grid(Model)
+        .Name("UserAccounts")
+        .DataKeys(dataKeys => dataKeys.Add(c => c.Id))
+        .DataBinding(dataBinding => dataBinding.Server()
+            .Delete("UserAccountDelete", "Account", null))
+        .Columns(columns =>
+        {
+            columns.Bound(u => u.Id).Title("No.").Width(100);
+            columns.Bound(u => u.UserName).Title("Kullanıcı Adı");
+            columns.Bound(u => u.CompanyName).Title("Firma Adı");
+            columns.Template(
+                @<ul> 
+                @foreach (var role in item.Roles) 
+                { 
+                    <li>@role.Name</li> 
+                } 
+                </ul>)
+            .Title("Roller");
+            columns.Command(commands => 
+                {                    
+                    commands.Custom("viewDetails")
+                    .Text("Detay")
+                    .DataRouteValues(route => route.Add(o => o.Id).RouteKey("UserAccountId"))
+                    .Ajax(false)
+                    .Action("UserAccountRead", "Account");
+                    commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                })
+            .Width(200);
+        })
+        .Sortable()
+        .Pageable(paging => paging.PageSize(10))
+        .Localizable("tr-TR")
+        )             
+        @Html.ActionLink("Kullanıcı Oluştur", "UserAccountCreate", null, new { Class = "ym-button ym-add" })        
+    </div>
+</div>

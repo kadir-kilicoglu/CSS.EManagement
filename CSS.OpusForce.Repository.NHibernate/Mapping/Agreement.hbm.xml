@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="CSS.OpusForce.Model" namespace="CSS.OpusForce.Model.Agreements" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Agreement" table="Agreement" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+    </id>
+
+    <property name="AgreementNumber">
+      <column name="AgreementNumber" sql-type="nvarchar(64)" not-null="true" />
+    </property>
+    <property name="Name">
+      <column name="Name" sql-type="nvarchar(128)" not-null="true" />
+    </property>
+    <property name="SignDate">
+      <column name="SignDate" sql-type="date" not-null="true" />
+    </property>
+    <property name="StartDate">
+      <column name="StartDate" sql-type="date" not-null="true" />
+    </property>
+    <property name="EndDate">
+      <column name="EndDate" sql-type="date" not-null="false" />
+    </property>
+    <property name="Description">
+      <column name="Description" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+    <property name="ContractFile">
+      <column name="ContractFile" sql-type="nvarchar(512)" not-null="false" />
+    </property>
+
+    <many-to-one name="AgreementType"
+                      class="AgreementType"
+                      column="AgreementTypeId"
+                      not-null="true" />
+    <many-to-one name="AgreementStatus"
+                      class="AgreementStatus"
+                      column="AgreementStatusId"
+                      not-null="true" />
+    <many-to-one name="OperationCenter"
+                      class="CSS.OpusForce.Model.OperationCenters.OperationCenter"
+                      column="OperationCenterId"
+                      not-null="true" />
+    <many-to-one name="Employee"
+                      class="CSS.OpusForce.Model.Employees.Employee"
+                      column="EmployeeId"
+                      not-null="false" />
+    <many-to-one name="Contractor"
+                      class="CSS.OpusForce.Model.Contractors.Contractor"
+                      column="ContractorId"
+                      not-null="false" />       
+    
+    <bag name="Employees" inverse="true" cascade="none" lazy="true">
+      <key column="AgreementId" />
+      <one-to-many class="CSS.OpusForce.Model.Employees.Employee" />
+    </bag>
+  </class>
+</hibernate-mapping>
